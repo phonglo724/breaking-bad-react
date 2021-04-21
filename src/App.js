@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React, { Component } from "react";
 import './App.css';
+import CharacterPage from "./components/CharacterPage";
+import QuotesApp from "./components/QuotesApp";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const charactersURL= "https://breakingbadapi.com/api/characters";
+
+class App extends Component {
+
+  state = {
+    characters: []
+  }
+
+  componentDidMount() {
+    fetch(charactersURL)
+      .then(response => response.json())
+      .then(characters => this.setState({characters}))
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <QuotesApp />
+        <CharacterPage 
+          characters={this.state.characters} 
+        />
     </div>
-  );
+    );
+  }
 }
 
 export default App;
