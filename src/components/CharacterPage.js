@@ -12,6 +12,21 @@ export default function CharacterPage(props) {
 
     return (
         <div>
+            <section>
+                <h1 className="title">
+                    <span>B</span>
+                    <span>R</span>
+                    <span>E</span>
+                    <span>A</span>
+                    <span>K</span>
+                    <span>I</span>
+                    <span>N</span>
+                    <span>G</span>                    
+                    <span> &nbsp; B</span>
+                    <span>A</span>
+                    <span>D</span>
+                </h1>
+            </section>
             <ul>
                 { displayCharacters() }
             </ul>

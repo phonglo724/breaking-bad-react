@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import './App.css';
 import CharacterPage from "./components/CharacterPage";
-import QuotesApp from "./components/QuotesApp";
 
 const charactersURL= "https://breakingbadapi.com/api/characters";
 
@@ -19,8 +18,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <QuotesApp />
+      <div className="App">
         <CharacterPage 
           characters={this.state.characters} 
         />
